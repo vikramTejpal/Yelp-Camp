@@ -1,0 +1,50 @@
+<%- include("../partials/header")  %>
+
+<div class="container">
+	<div class="container">	
+	<header class="jumbotron">
+		<% if(error && error.length>0){ %>
+		<div class="container">
+			<div class="alert alert-danger" role="alert">
+				<%= error %>
+			</div>
+			<%}%>
+			<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert">
+				<%= success %>
+			</div>
+			<%}%>
+			<h1>
+				Welcome!!!To the Yelp camp: 
+				<% if(!currentUser) {%>
+				and please login/signup 
+				<%}else{%>
+				<b><%= currentUser.username %></b>
+				<%}%>
+			</h1>
+			<p>
+				View our handpicked campgrounds from all over the world
+			</p>
+			<p>
+				<a class="btn btn-lg btn-danger" href="/campgrounds/new">Add a new campground</a>
+			</p>
+		</div>
+	</header>
+		<div class="row text-center container">
+		<% campgrounds.forEach(function(i){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%=	i.image		%>">
+				</div>
+				<div class="caption">
+					<h4><%=	i.name	%></h4>
+				</div>
+				<p>
+					<a class="btn btn-primary" href="/campgrounds/<%= i._id %>">More info</a>
+				</p>
+			</div>
+		<%})%>
+	</div>
+</div>	
+</div>
+<%- include("../partials/footer")  %>

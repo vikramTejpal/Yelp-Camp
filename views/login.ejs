@@ -1,0 +1,37 @@
+<%- include("./partials/header")  %>
+<div class="container">
+	<% if(error && error.length>0){ %>
+	<div class="alert alert-danger" role="alert">
+		<%= error %>
+	</div>
+	<%}%>
+	<% if(success && success.length>0){ %>
+	<div class="alert alert-success" role="alert">
+		<%= success %>
+	</div>
+	<%}%>
+
+<h1 style="text-align:center;">
+	Login!!!
+</h1>
+<div style="width: 30%; margin: 0 auto;">
+	<form action="/login" method="POST">
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" name="username" placeholder="Please enter your username">
+		</div>
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" name="password" placeholder="Enter your password">
+		</div>
+		<div class="form-group">
+			<a class="btn btn-primary">
+				Login
+			</a>
+		</div>
+		<a href="/register">New user?</a>
+	</form>
+</div>
+
+</div>
+<%- include("./partials/footer")  %>
