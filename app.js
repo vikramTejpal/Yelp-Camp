@@ -19,7 +19,14 @@ app.set("view engine","ejs")
 var bodyParser    = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}))
 var mongoose      = require("mongoose");
-mongoose.connect('mongodb://localhost:27017/yelp_camp_3', { useNewUrlParser: true, useUnifiedTopology: true,});
+mongoose.connect('mongodb+srv://sharmavikram449:8699718171@Aa@cluster0-h8k1u.mongodb.net/<dbname>?retryWrites=true&w=majority', { 
+	useNewUrlParser : true, 
+	useCreateIndex  : true
+}).then(() => {
+	console.log("connected to DB");
+}).catch(err => {
+	console.log("ERROR",err.message)
+});
 //for css
 app.use(express.static(__dirname + "/public"));
 app.use(methodOveride("_method"))
