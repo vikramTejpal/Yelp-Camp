@@ -29,6 +29,7 @@ mongoose.connect('mongodb+srv://sharmavikram449:8699718171@Aa@cluster0-h8k1u.mon
 });
 //for css
 app.use(express.static(__dirname + "/public"));
+
 app.use(methodOveride("_method"))
 app.use(flash())
 //requiring routes
@@ -59,7 +60,7 @@ app.use(campgroundsRoutes);
 app.use(commentsRoutes);
 app.use(indexRoutes);
 
-app.listen(3000,function()
+app.listen(process.env.PORT, process.env.IP,function()
 	{
 		console.log("Yelp Camp Server Started At Port Number 3000");	
 	})
