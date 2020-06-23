@@ -131,7 +131,6 @@ Install and configure connect-flash
 Add bootstrap alerts to header
 RESTFUL ROUTES
 
-name url ve
 	
 //RESTFUL ROUTES
 =======================================================
