@@ -19,7 +19,7 @@ app.set("view engine","ejs")
 var bodyParser    = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}))
 var mongoose      = require("mongoose");
-mongoose.connect('mongodb+srv://sharmavikram449:8699718171@Aa@cluster0-h8k1u.mongodb.net/<dbname>?retryWrites=true&w=majority', { 
+mongoose.connect('mongodb+srv://sharmavikram449:PWD@cluster0-h8k1u.mongodb.net/<dbname>?retryWrites=true&w=majority', { 
 	useNewUrlParser : true, 
 	useCreateIndex  : true
 }).then(() => {
